@@ -1,2 +1,0 @@
-# seLab
-dummy text
