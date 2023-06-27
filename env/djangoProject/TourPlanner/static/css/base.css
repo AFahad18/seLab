@@ -20,6 +20,18 @@ body {
 
 /* NavBar  */
 /*** Navbar ***/
+#top-logo>a {
+    text-decoration: none;
+    font-weight: 800;
+    color: var(--primary);
+    transition: 0.3s;
+}
+
+#top-logo>a:hover {
+    color: #0a64b3;
+    text-decoration: underline;
+}
+
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Nunito', sans-serif;
     position: relative;
@@ -31,6 +43,10 @@ body {
     outline: none;
     transition: .5s;
 
+}
+
+#nav-container {
+    background-color: rgb(216, 216, 216);
 }
 
 .dropdown-nav-link {

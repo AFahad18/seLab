@@ -9,3 +9,6 @@ from django.core.files.storage import FileSystemStorage
 
 def home(request):
     return render(request, 'html/home.html')
+
+def weatehrInfo(request):
+    return render(request, 'html/weatherInfo.html')

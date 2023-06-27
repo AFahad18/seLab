@@ -1,0 +1,75 @@
+{% extends 'html/base.html' %}
+{% load static %}
+
+{% block toplink %}
+    <link rel="stylesheet" href="{% static 'css/weather.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section id="xxContainer">
+        <h2 id="topTitle">The Weather Forecasting of <span id="location"> </span> for the next 5 days for each 3
+            hours</h2>
+
+        <div id="chartCanvus">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div id="fullDiv">
+            <div class="weatherCard">
+                <p class="DateTime">2022-12-24 18:00:00</p>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                <p class="fellMargin">26.5°C, Feels Like 25°C</p>
+                <h6 class="miniMarginTop">Rain</h6>
+                <p class="miniMarginTop">Clear Sky</p>
+                <p class="humidityMagin">wind 25, humidity 100</p>
+            </div>
+        </div>
+
+    </section>
+    <!-- <div id="homeBack">
+        <button id="HomeBtn">Back To Home</button>
+    </div> -->
+{% endblock %}
+
+
+{% block bodyLast %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'js/weatherdata.js' %}"></script>
+
+    <script>
+        let temperature = [];
+        let dateTime = [];
+        let data = sessionStorage.getItem('weatherInfo');
+        data = JSON.parse(data);
+        data.list.forEach(element => {
+            const temp = parseFloat(element.main.temp) - 273.15;
+            temperature.push(temp.toFixed(2));
+            dateTime.push(element.dt_txt);
+
+        });
+        const ctx = document.getElementById('myChart');
+        const xx = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+        const yy = [12, 19, 3, 5, 2, 3];
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dateTime,
+                datasets: [{
+                    label: 'Temperature in Celcious',
+                    data: temperature,
+                    backgroundColor: 'rgba(40, 176, 255, 0.856)',
+                    borderColor: 'rgba(255, 40, 244, 0.856)',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+{% endblock %}
