@@ -4,3 +4,11 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#locationError {
+    color: red;
+    text-align: center;
+    font-size: large;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}

@@ -16,16 +16,16 @@ const placeInfoSearch = async () => {
                 loadData(data[0].name, data[0].lat, data[0].lon);
             }
             else {
-                // bideshi 
-                // console.log("Bideshi");
+                console.log("Bideshi");
                 document.getElementById("locationError").innerText = "Please Enter a city name of Bangladesh";
-                document.getElementById("locationError").style.display = "block";
+                document.getElementById("locationError").style.visibility = "visible";
             }
         }
         else {
             // invalid city name
+            console.log("invalid");
             document.getElementById("locationError").innerText = "Invalid City Name";
-            document.getElementById("locationError").style.display = "block";
+            document.getElementById("locationError").style.visibility = "visible";
         }
     }
     catch (error) {
