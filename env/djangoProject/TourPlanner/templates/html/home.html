@@ -68,8 +68,29 @@
         {% endfor %}
     </section>
 
-    <section id="hotelHomeContainer" class="home-container">
 
+    <!-- hotel section  -->
+    <section id="hotelHomeContainer" class="home-container">
+        <h1 class="text-center">Find Your Hotel</h1>
+
+        <div class="home-section-shadow home-hotel-content">
+
+            <div class="position-relative w-75 mx-auto">
+                <input type="text" class="form-control border-0 rounded-pill w-100 py-3 ps-o4 pe-5" placeholder="Type your location." id="hotelLocation" style="padding-left: 20px;">
+                <!-- button  -->
+                <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top:7px;" onclick="">Find</button>
+            </div>
+            <div id="hotel-content">
+                <div id="hotelContentLeft">
+                    <img src="/media/files/hotelBanner.jpg" alt="">
+                </div>
+                <div id="hotelContentRight">
+                    <p>
+                        TourPlanner is a comprehensive website that allows users to effortlessly plan their tours and make hotel bookings. With TourPlanner, users can explore various destinations, access detailed weather information, and conveniently book accommodations to suit their preferences. Whether it's a leisurely vacation or a business trip, TourPlanner offers a seamless hotel booking experience, ensuring users find the perfect place to stay during their travels.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 {% endblock %}
 

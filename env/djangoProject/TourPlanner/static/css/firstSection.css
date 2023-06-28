@@ -1,8 +1,17 @@
 /* global */
-.home-container{
+.home-container {
     width: 95%;
     margin: 0 auto 6rem auto;
 }
+
+.home-section-shadow {
+    box-shadow: 0px -9px 20px -6px rgba(0, 0, 0, 0.30);
+    -webkit-box-shadow: 0px -9px 20px -6px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0px -9px 20px -6px rgba(0, 0, 0, 0.30);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 /* global end  */
 
 .first-section {
@@ -159,15 +168,48 @@
 #aboutContent {
     padding: 8px 20px 6rem 20px;
 }
-#aboutContent>p>a{
+
+#aboutContent>p>a {
     text-decoration: none;
     display: inline-block;
     color: rgb(177, 96, 137);
     transition: 0.5s;
 }
-#aboutContent>p>a:hover{
+
+#aboutContent>p>a:hover {
     text-decoration: underline;
     color: hotpink;
     transform: scale(1.1);
     /* font-size: large; */
+}
+
+
+/* hotel section ************* */
+#hotelLocation {
+    border: 1px solid rgba(133, 133, 133, 0.637) !important;
+}
+
+.home-hotel-content {
+    padding-top: 3rem;
+}
+#hotel-content{
+    margin: 1rem 0;
+    display: flex;
+}
+#hotelContentLeft{
+    width: 60%;
+    height: 60vh;
+}
+#hotelContentRight{
+    width: 40%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 200;
+}
+
+#hotelContentLeft>img{
+    width: 100% !important;
 }
