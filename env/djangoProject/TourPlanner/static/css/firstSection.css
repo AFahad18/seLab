@@ -1,3 +1,10 @@
+/* global */
+.home-container{
+    width: 95%;
+    margin: 0 auto 6rem auto;
+}
+/* global end  */
+
 .first-section {
     background: linear-gradient(rgba(20, 20, 31, 0.7), rgba(20, 20, 31, 0.7)), url(../files/firstSectionBg.jpg);
     background-position: center center;
@@ -18,17 +25,19 @@
 /* blog section  */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-#blog-header{
+#blog-header {
     text-align: center;
     font-family: 'Montserrat', sans-serif !important;
-    font-weight: 600;   
+    font-weight: 600;
 }
-#blog-header>a{
+
+#blog-header>a {
     text-decoration: none;
     color: black;
     transition: 0.2s;
 }
-#blog-header>a:hover{
+
+#blog-header>a:hover {
     text-decoration: underline;
 }
 
@@ -45,9 +54,9 @@
     background-color: white;
     margin: 0 10px;
 
-    -webkit-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.83);
-    -moz-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.83);
-    box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.83);
+    -webkit-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.35);
+    box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.35);
 }
 
 .blogCard>h2 {
@@ -77,10 +86,11 @@
     font-family: 'Montserrat', sans-serif !important;
 }
 
-#blogTitleContainer{
+#blogTitleContainer {
     max-height: 20%;
     overflow: hidden;
 }
+
 .bolgTitle {
     padding: 0 10px;
     font-family: 'Montserrat', sans-serif !important;
@@ -128,4 +138,36 @@
 .blog-readMore>a:hover {
     color: rgb(0, 153, 255);
     text-decoration: underline;
+}
+
+
+/* about section  */
+#aboutSec {
+    width: 95%;
+    margin: 0 auto 6rem auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden !important;
+
+    box-shadow: 0px -9px 20px -6px rgba(0, 0, 0, 0.30);
+    -webkit-box-shadow: 0px -9px 20px -6px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0px -9px 20px -6px rgba(0, 0, 0, 0.30);
+
+    font-weight: 200;
+}
+
+#aboutContent {
+    padding: 8px 20px 6rem 20px;
+}
+#aboutContent>p>a{
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(177, 96, 137);
+    transition: 0.5s;
+}
+#aboutContent>p>a:hover{
+    text-decoration: underline;
+    color: hotpink;
+    transform: scale(1.1);
+    /* font-size: large; */
 }

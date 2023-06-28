@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block firstSection %}
-    <div class="contain-fluid position-relative p-0 ">
+    <div class="contain-fluid position-relative p-0 " id="weatherHome">
 
         <div class="container-fluid bg-primary py-5 mb-5 first-section">
             <div class="container py-5">
@@ -27,10 +27,24 @@
 {% endblock %}
 
 {% block content %}
+
+    <!-- about section  -->
+    <h1 class="text-center">About Us</h1>
+    <section id="aboutSec">
+        <div id="aboutBanner">
+            <img src="/media/files/trips.svg" alt="">
+        </div>
+        <div id="aboutContent">
+            <p>
+                TourPlanner is a comprehensive website designed to assist users in planning their tours effortlessly. With TourPlanner, users can access  <a href="#weatherHome">detailed weather information for any desired location</a>, ensuring they make informed decisions based on current and forecasted weather conditions. The platform also offers convenient booking services, allowing users to <a href="">reserve hotels</a>, choose from <a href="">pre-designed travel packages</a>, or <a href="">customize</a> their own unique travel itinerary. Additionally, TourPlanner caters to the literary interests of users, providing access to a collection of <a href="">free books</a> for reading during leisure time. With its all-in-one functionality, TourPlanner simplifies the tour planning process, making it an indispensable tool for travelers seeking convenience and personalized experiences.
+            </p>
+        </div>
+    </section>
+
     <!-- blog section  -->
-    <h2 id="blog-header">
+    <h1 id="blog-header">
         <a href="{% url 'blog' %}">Recent News</a>
-    </h2>
+    </h1>
     <section id="blogContainer">
         {% for post in posts %}
             <div class="blogCard">
@@ -52,6 +66,10 @@
                 </div>
             </div>
         {% endfor %}
+    </section>
+
+    <section id="hotelHomeContainer" class="home-container">
+
     </section>
 {% endblock %}
 
