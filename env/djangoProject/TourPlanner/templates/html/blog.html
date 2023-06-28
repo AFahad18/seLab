@@ -1,3 +1,29 @@
 {% extends 'html/base.html' %}
 
 {% load static %}
+
+{% block toplink %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <!-- fontAwsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block content %}
+    <section id="blogContainer">
+        {% for post in posts %}
+            <div class="eachBlog">
+                <div class="blogImg">
+                    <img src="{{ post.post_image.url }}" alt="">
+                </div>
+                <p class="tag"> <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i> {{ post.tag }}</p>
+                <h2 class="blogTitle">{{ post.title }}</h2>
+                <p class="content">
+                    {{ post.content }}
+                </p>
+                <p class="date">{{ post.date_posted }}</p>
+                <div class="blogBorder"></div>
+            </div>
+        {% endfor %}
+
+    </section>
+{% endblock %}

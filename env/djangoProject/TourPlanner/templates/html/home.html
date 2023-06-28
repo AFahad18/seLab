@@ -29,7 +29,7 @@
 {% block content %}
     <!-- blog section  -->
     <h2 id="blog-header">
-        <a href="">Recent News</a>
+        <a href="{% url 'blog' %}">Recent News</a>
     </h2>
     <section id="blogContainer">
         {% for post in posts %}
@@ -47,7 +47,7 @@
                 <div class="blog-bottomPart">
                     <p class="blogDate"> {{ post.date_posted}} </p>
                     <p class="blog-readMore">
-                        <a href="">Continue reading</a>
+                        <a href="{% url 'blog' %}">Continue reading</a>
                     </p>
                 </div>
             </div>

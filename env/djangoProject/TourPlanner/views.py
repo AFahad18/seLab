@@ -15,3 +15,9 @@ def home(request):
 
 def weatehrInfo(request):
     return render(request, 'html/weatherInfo.html')
+
+def blog(request):
+    Context = {
+        'posts' : Post.objects.all()
+    }
+    return render(request, 'html/blog.html', Context)
