@@ -29,7 +29,9 @@ def autoCompleteHotelSearch(request):
         locations = list()
         for hotel in hotels:
             locations.append(hotel.location)
-        return JsonResponse(locations, safe=False)
+            
+        uniqueLocations = list(set(locations))
+        return JsonResponse(uniqueLocations, safe=False)
     else:
         return redirect(home)
     
