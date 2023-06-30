@@ -1,0 +1,21 @@
+{% extends 'html/base.html' %}
+{% load static %}
+
+{% block toplink %}
+    <link rel="stylesheet" href="{% static 'css/firstSection.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section id="searchContainer">
+        <div id="topSearch">
+            <form class="position-relative w-75 mx-auto">
+                <input type="text" class="form-control border-0 rounded-pill w-100 py-3 ps-o4 pe-5" placeholder="Type your location." id="hotelLocation" style="padding-left: 20px;" name="hotelLocation">
+                <!-- button  -->
+                <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top:7px;" onclick="">Find</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}
+
+{% block bodyLast %}
+{% endblock %}

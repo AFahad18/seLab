@@ -1,0 +1,52 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block toplink %}
+    <link rel="stylesheet" href="{% static 'css/viewHotel.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block content %}
+    <section id="searchContainer" class="section-container section-section-shadow">
+        <div id="topSearch">
+            <form class="position-relative w-75 mx-auto">
+                <input type="text" class="form-control border-0 rounded-pill w-100 py-3 ps-o4 pe-5" placeholder="Find your hotel." id="hotelLocation" style="padding-left: 20px;" name="hotelLocation">
+                <!-- button  -->
+                <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top:7px;" onclick="">Find</button>
+            </form>
+        </div>
+        <h2 style="text-align: center;" id="topTitle">Available Hotels</h2>
+        <div class="hotels">
+            {% for hotel in hotels %}
+                <div class="hotel">
+                    <div class="hotel-img">
+                        <img src="{{ hotel.hotel_image.url }}" alt="" class="hotel-img2">
+                    </div>
+                    <div class="hotel-rating hotelContextPadding">
+                            {% for _ in hotel.rating|default:0|make_range %}
+                                <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+                            {% endfor %}
+
+                    </div>
+                    <div class="hotel-ingo hotelContextPadding">
+                        <h4>{{ hotel.name }}</h4>
+                        <p class="hotel-location">
+                            <i class="fa-solid fa-location-dot"></i> {{hotel.location}}
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-dollar-sign" style="font-weight: 900;"></i> {{ hotel.rent }}
+                        </p>
+
+                        <a href="" class="viewButtonLink">view Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+{% endblock %}
+
+{% block bodyLast %}
+{% endblock %}

@@ -32,3 +32,12 @@ def autoCompleteHotelSearch(request):
         return JsonResponse(locations, safe=False)
     else:
         return redirect(home)
+    
+def searchedHotel(request):
+    return render(request, 'html/hotelSearch.html')
+
+def viewHotel(request):
+    Context = {
+        'hotels' : Hotel.objects.all()
+    }
+    return render(request, 'html/viewHotel.html', Context)
