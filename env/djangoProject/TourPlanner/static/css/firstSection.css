@@ -233,3 +233,130 @@
 #hotelContentLeft>img{
     width: 100% !important;
 }
+
+
+/* package Section  by ana */
+
+
+
+.package-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+}
+
+.package-item img {
+    transition: 0.5s;
+    height: 32vh !important;
+    aspect-ratio: 16/7 !important;
+    padding: 8px;
+    border-radius: 5px !important;
+}
+
+.package-item:hover img {
+    transform: scale(1.1);
+}
+
+.packageBtn {
+    background-color: #0275d8 !important;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    transition: 0.2s;
+}
+
+.packageBtn:hover {
+    background-color: #0274d8c0 !important;
+}
+
+.btn {
+    font-family: 'Nuito', sans-serif;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #f5f5f5;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.bookNow {
+    text-align: center;
+    padding: 8px 18px;
+    border-radius: 15px;
+    background-color: rgb(0, 187, 255);
+    display: inline-block;
+    color: white;
+}
+
+.bookNow:hover {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgb(8, 113, 219) 0%, rgba(22, 97, 179, 1) 36%, rgba(0, 212, 255, 1) 100%);
+}
+
+.hBookingCardBtn {
+    background-color: transparent;
+    border: transparent;
+}
+
+#fullHottelContainer {
+    width: 85%;
+    margin: 2rem auto;
+    box-shadow: 1px 1px 10px rgba(45, 45, 45, 0.375);
+    border-radius: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* confirm hottel  */
+.sectionBg {
+    width: 85%;
+    margin: 2rem auto;
+    box-shadow: 1px 1px 10px rgba(45, 45, 45, 0.375);
+    border-radius: 16px;
+}
+
+#confirmHottelContainer input {
+    /* border: 1px solid rgba(0, 179, 255, 0.839) !important; */
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.594);
+    background-color: rgba(239, 239, 239, 0.429) !important;
+    padding-left: 1.5rem !important;
+}
+
+.button-center {
+    width: fit-content;
+    margin: 2rem auto !important;
+
+}
+
+.button-center>button {
+    padding: 12px 20px !important;
+    border-radius: 15px;
+    margin-bottom: 1rem !important;
+    background-color: rgb(47, 175, 255);
+    border: none;
+    color: white;
+    transition: 0.2s;
+}
+
+.button-center>button:hover {
+    background-color: rgba(68, 183, 255, 0.905);
+}
+
+.locationIcon2 {
+    color: green;
+    font-size: large;
+    margin-right: 4px;
+}
+
+.starIcon {
+    color: gold;
+}
+
+.section-title {
+    padding-top: 5rem !important;
+}
