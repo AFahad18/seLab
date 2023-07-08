@@ -93,9 +93,63 @@
         </div>
     </section>
 
-    <!-- packages -->
-    <section>
-        
+    
+         <!-- packages by ana -->
+    <div class="text-center section-title">
+        <h1 class="mb-1 section-title">Awsome Package</h1>
+    </div>
+    <section id="packageSection" class="home-container home-section-shadow">
+        <div class="container-xxl  py-5">
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+
+                    <form class="col-lg-4 col-md-6" action="pages/packageDetail.php" method="POST">
+                        <input type="hidden" name='packageID' value="" class="hidden">
+
+                        <div class="package-item">
+                            <div class="overflow-hidden">
+                                <img src="/media/package_images/bandarban.jpg" alt="" class="img-fluid packageCardImage">
+                            </div>
+                            <div class="d-flex border-bottom packageCardIcon">
+                                <small class="flex-fill text-center border-end py-2">
+                                    <i class="fa-solid fa-location-dot locationIcon2"></i>
+                                    Cox Bazar
+                                </small>
+
+                                <small class="flex-fill text-center border-end py-2">
+                                    <i class="fa-solid fa-calendar-days locationIcon2"></i>
+                                    3 day(s)</small>
+
+                                <small class="flex-fill text-center border-end py-2">
+                                    <i class="fa-solid fa-person-walking-luggage locationIcon2"></i> 2 person(s)
+                                </small>
+                            </div>
+
+                            <div class="text-center p-4">
+                                <h3 class="mb-0">$ 200.00</h3>
+                                <div class="mb-3 ">
+                                    <i class="fa-solid fa-star starIcon"></i>
+                                    <i class="fa-solid fa-star starIcon"></i>
+                                    <i class="fa-solid fa-star starIcon"></i>
+                                    <i class="fa-solid fa-star starIcon"></i>
+                                </div>
+
+                                <p>Package details Lorem ipsum dolor sit amet consectetur.</p>
+                                <div class="d-flex justify-content-center mb-2">
+                                    <button type="submit" class="btn btn-sm btn-primary px-3 packageBtn"
+                                        style="border-radius:  30px 0 0 30px ;">Read More</button>
+                                    <button type="submit" formaction="about.html"
+                                        class="btn btn-sm btn-primary px-3 packageBtn"
+                                        style="border-radius: 0 30px 30px 0 ;">Book Now</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
     </section>
 {% endblock %}
 
