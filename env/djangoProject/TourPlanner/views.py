@@ -35,11 +35,28 @@ def autoCompleteHotelSearch(request):
     else:
         return redirect(home)
     
-def searchedHotel(request):
-    return render(request, 'html/hotelSearch.html')
 
 def viewHotel(request):
     Context = {
         'hotels' : Hotel.objects.all()
     }
     return render(request, 'html/viewHotel.html', Context)
+
+def searchHotel(request):
+    if 'location' in request.GET:
+        Context = {
+            'hotels' : Hotel.objects.filter(location__istartswith=request.GET.get('location')),
+            'location' : request.GET.get('location')
+        }        
+        return render(request, 'html/hotelSearch.html', Context)
+    else:
+        return redirect(viewHotel)
+
+def hotelDetails(request, id):
+    if id:
+        Context = {
+            'hotel' : Hotel.objects.get(id = id)
+        }
+        return render(request, 'html/hotelDetails.html', Context)
+    else:
+        return render(viewHotel)

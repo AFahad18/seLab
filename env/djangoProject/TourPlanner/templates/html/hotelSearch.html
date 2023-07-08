@@ -1,21 +1,62 @@
 {% extends 'html/base.html' %}
 {% load static %}
+{% load custom_tags %}
 
 {% block toplink %}
-    <link rel="stylesheet" href="{% static 'css/firstSection.css' %}">
+    <link rel="stylesheet" href="{% static 'css/viewHotel.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 {% endblock %}
 
 {% block content %}
-    <section id="searchContainer">
+    <section id="searchContainer" class="section-container section-section-shadow">
         <div id="topSearch">
-            <form class="position-relative w-75 mx-auto">
-                <input type="text" class="form-control border-0 rounded-pill w-100 py-3 ps-o4 pe-5" placeholder="Type your location." id="hotelLocation" style="padding-left: 20px;" name="hotelLocation">
+            <form class="position-relative w-75 mx-auto " method="get" action="{% url 'searchedHotel' %}">
+                <input type="text" class="form-control border-0 rounded-pill w-100 py-3 ps-o4 pe-5" placeholder="Find your hotel." id="hotelLocation" style="padding-left: 20px;" name="location">
                 <!-- button  -->
                 <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top:7px;" onclick="">Find</button>
             </form>
+        </div>
+        <h2 style="text-align: center;" id="topTitle">Here is the hotels for '{{ location }}'</h2>
+        <div class="hotels">
+            {% for hotel in hotels %}
+                <div class="hotel">
+                    <div class="hotel-img">
+                        <img src="{{ hotel.hotel_image.url }}" alt="" class="hotel-img2">
+                    </div>
+                    <div class="hotel-rating hotelContextPadding">
+                            {% for _ in hotel.rating|default:0|make_range %}
+                                <i class="fa-solid fa-star" style="color: #ffd500;"></i>
+                            {% endfor %}
+
+                    </div>
+                    <div class="hotel-ingo hotelContextPadding">
+                        <h4>{{ hotel.name }}</h4>
+                        <p class="hotel-location">
+                            <i class="fa-solid fa-location-dot"></i> {{hotel.location}}
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-dollar-sign" style="font-weight: 900;"></i> {{ hotel.rent }}
+                        </p>
+
+                        <a href="{% url 'hotelDetails' hotel.id %}" class="viewButtonLink">view Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+
         </div>
     </section>
 {% endblock %}
 
 {% block bodyLast %}
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#hotelLocation" ).autocomplete({
+            source: "{% url 'autoCompleteHotelSearch' %}"
+          });
+        } );
+    </script>
 {% endblock %}

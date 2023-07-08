@@ -75,11 +75,11 @@
 
         <div class="home-section-shadow home-hotel-content">
 
-            <div class="position-relative w-75 mx-auto">
-                <input type="text" class="form-control border-0 rounded-pill w-100 py-3 ps-o4 pe-5" placeholder="Type your location." id="hotelLocation" style="padding-left: 20px;">
+            <form class="position-relative w-75 mx-auto" method="get" action="{% url 'searchedHotel' %}">
+                <input type="text" class="form-control border-0 rounded-pill w-100 py-3 ps-o4 pe-5" placeholder="Type your location." id="hotelLocation" style="padding-left: 20px;" name="location">
                 <!-- button  -->
-                <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top:7px;" onclick="">Find</button>
-            </div>
+                <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top:7px;" onclick="">Find</button>
+            </form>
             <div id="hotel-content">
                 <div id="hotelContentLeft">
                     <img src="/media/files/hotelBanner.jpg" alt="">
