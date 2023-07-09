@@ -18,3 +18,18 @@ class Hotel(models.Model):
     rating = models.IntegerField()
     description = models.TextField()
     hotel_image = models.ImageField(null=True, blank=True, upload_to ='hotels/')
+
+class Package(models.Model):
+    location = models.CharField(max_length=64)
+    rating = models.IntegerField()
+    person = models.IntegerField()
+    destination = models.CharField(max_length=256)
+    hotelRoom = models.CharField(max_length=256)
+    transport = models.CharField(max_length=256)
+    datetime = models.CharField(max_length=128)
+    food = models.CharField(max_length=256)
+    price = models.FloatField()
+    package_image = models.ImageField(null=True, blank=True, upload_to ='package_images/')
+    package_image1 = models.ImageField(null=True, blank=True, upload_to ='package_images/details')
+    package_image2 = models.ImageField(null=True, blank=True, upload_to ='package_images/details')
+    package_image3 = models.ImageField(null=True, blank=True, upload_to ='package_images/details')
