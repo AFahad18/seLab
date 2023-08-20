@@ -60,3 +60,7 @@ def hotelDetails(request, id):
         return render(request, 'html/hotelDetails.html', Context)
     else:
         return render(viewHotel)
+    
+
+# def chat(request):
+#     return render(request, 'html/chat.html')
