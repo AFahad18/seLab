@@ -10,7 +10,6 @@ body {
   margin: 0 auto;
   max-width: 800px;
   padding: 0 20px;
-  background-image: url('12.jpg');
 }
 
 .container {
@@ -44,8 +43,6 @@ body {
   float: right;
   margin-left: 20px;
   margin-right:0;
-  {% comment %} background: url(../../static/file/12.jpg); {% endcomment %}
-  {% comment %} background: black; {% endcomment %}
 }
 
 .time-right {
@@ -100,7 +97,7 @@ body {
     }
     </style>
 
-    <form id="post-form" method="POST" action="../checkview">
+    <form id="post-form" method="POST" action="checkview">
         {% csrf_token %}
         <label>Room Name</label>
         <input type="text" name="room_name" id="room_name" width="100px" />
