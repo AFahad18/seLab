@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if guides %}
+        {% for guide in guides %}
+            <div class="card">
+                <h2>{{ guide.name }}</h2>
+                <p>Email: {{ guide.email }}</p>
+                <p>Location: {{ guide.location }}</p>
+                <p>Number: {{ guide.number }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No guides found.</p>
+    {% endif %}
+</body>
+</html>

@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from .models import Post, Hotel
+# from t_logsign.models import Guide
 from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
@@ -64,3 +65,15 @@ def hotelDetails(request, id):
 
 # def chat(request):
 #     return render(request, 'html/chat.html')
+
+
+# def search_results(request):
+#     location = request.GET.get('location')
+    
+#     if location:
+#         guides = Guide.objects.filter(location__icontains=location)
+#     else:
+#         guides = Guide.objects.none()
+    
+#     context = {'guides': guides}
+#     return render(request, 'html/results.html', context)

@@ -27,7 +27,7 @@ def SignupPage(request):
             # return HttpResponse("User has been created Successfully")
             # print(uname,email,location,number,pass1,pass2)
             return redirect('/')
-    return render (request, 'html/signup.html')
+    return render (request, 'signup.html')
 
 def LoginPage(request):
     if request.method=='POST':
@@ -39,5 +39,19 @@ def LoginPage(request):
             return redirect('/')
         else:
             return HttpResponse("Username and Password is incorrect!!!")
-    return render (request, 'html/login.html')
+    return render (request, 'login.html')
 
+
+def search(request):
+    return render(request, 'search.html')
+
+def search_results(request):
+    location = request.GET.get('location')
+    
+    if location:
+        guides = Guide.objects.filter(location__icontains=location)
+    else:
+        guides = Guide.objects.none()
+    
+    context = {'guides': guides}
+    return render(request, 'search_results.html', context)

@@ -12,4 +12,5 @@ urlpatterns = [
     path('hotelDetails/<int:id>', views.hotelDetails, name="hotelDetails"),
     path('hotelDetails/', views.home),
     # path('chat/',views.chat),
+    # path('search/',views.search_results, name='search_results'),
 ]

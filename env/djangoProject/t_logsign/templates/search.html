@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Guides</title>
+</head>
+<body>
+    <h1>Search Guides by Location</h1>
+    <form method="GET" action="{% url 't_logsign:search_results' %}">
+        <label for="location">Search by Location:</label>
+        <input type="text" name="location" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
