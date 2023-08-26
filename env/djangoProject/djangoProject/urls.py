@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('TourPlanner.urls')),
     path("chat/", include('chat.urls')),
+    path("t_logsign/", include('t_logsign.urls')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
