@@ -2,20 +2,82 @@
 <html>
 <head>
     <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            min-height: 100vh;
+        }
+        .card {
+            background: linear-gradient(to bottom right, #ff512f, #f09819);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: calc(33.33% - 20px);
+            text-align: center;
+            color: #333;
+            margin: 0;
+        }
+        .navbar {
+            background-color: #D8D8D8;
+            overflow: hidden;
+            {% comment %} text-align: left; {% endcomment %}
+        }
+
+        .navbar a {
+            float: right;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 20px 18px;
+            text-decoration: none;
+            display: inline-block; /* Display the links inline */
+        }
+
+        .navbar a:hover {
+            background-color: blue;
+            color: black;
+        }
+      
+    </style>
 </head>
 <body>
-    <h1>Search Results</h1>
-    {% if guides %}
-        {% for guide in guides %}
-            <div class="card">
-                <h2>{{ guide.name }}</h2>
-                <p>Email: {{ guide.email }}</p>
-                <p>Location: {{ guide.location }}</p>
-                <p>Number: {{ guide.number }}</p>
-            </div>
-        {% endfor %}
-    {% else %}
-        <p>No guides found.</p>
-    {% endif %}
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{% url 't_logsign:search_results' %}">Tour Guide</a>
+        <a href="{% url 't_logsign:signup' %}">SignUp</a>
+        <a href="#chat">Chat</a>
+        <a href="#contact">Contact</a>
+        <a href="#pages">Pages</a>
+        <a href="#packages">Packages</a>
+        <a href="#hotels">Hotels</a>
+        <a href="#about">About</a>
+        <a href="/">Home</a>
+    </div>
+    <div class="container">
+        {% if guides %}
+            {% for guide in guides %}
+                <div class="card">
+                    <h2>{{ guide.name }}</h2>
+                    <p>Email: {{ guide.email }}</p>
+                    <p>Location: {{ guide.location }}</p>
+                    <p>Number: {{ guide.number }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No guides found.</p>
+        {% endif %}
+    </div>
 </body>
 </html>

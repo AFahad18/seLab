@@ -11,16 +11,18 @@
     <style>
       body {
         margin: 0 auto;
-        max-width: 800px;
-        padding: 0 20px;
+        
       }
 
       .container {
         border: 2px solid #dedede;
         background-color: #f1f1f1;
         border-radius: 5px;
-        padding: 10px;
+        {% comment %} padding: 10px; {% endcomment %}
         margin: 10px 0;
+        max-width: 800px;
+        padding: 0 20px;
+        margin-left: 270px;
       }
 
       .darker {
@@ -57,9 +59,42 @@
         float: left;
         color: #999;
       }
+      .navbar {
+        background-color: #D8D8D8;
+        overflow: hidden;
+        {% comment %} text-align: left; {% endcomment %}
+    }
+
+    .navbar a {
+        float: right;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 20px 18px;
+        text-decoration: none;
+        display: inline-block; /* Display the links inline */
+    }
+
+    .navbar a:hover {
+        background-color: blue;
+        color: black;
+    }
+  
     </style>
   </head>
   <body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <a href="{% url 't_logsign:search_results' %}">Tour Guide</a>
+      <a href="{% url 't_logsign:signup' %}">SignUp</a>
+      <a href="#chat">Chat</a>
+      <a href="#contact">Contact</a>
+      <a href="#pages">Pages</a>
+      <a href="#packages">Packages</a>
+      <a href="#hotels">Hotels</a>
+      <a href="#about">About</a>
+      <a href="/">Home</a>
+  </div>
     {% comment %} {% block content %} {% endcomment %}
     <div align="center">
       <h2>Chatting</h2>

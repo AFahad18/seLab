@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Search Guides</title>
+    <style>
+        .sear{
+            margin-left: 500px;
+            margin-top: 200px;
+            box-shadow: 1px 2px 1px 3px gainsboro;
+            width: 40%;
+            height: 250px;
+            text-align: center;
+            background-color: #D8D8D8;
+        }
+        #btn{
+            height: 30px;
+            background-color: black;
+            color: honeydew;
+            /* width: 20px; */
+        }
+        #btn:hover{
+            background-color: azure;
+            color: black;
+        }
+        #h{
+            font-weight: normal;
+        }
+        #lbl{
+            font-weight: normal;
+            font-size: 25px;
+        }
+        #tbox{
+            height: 20px;
+        }
+        .navbar {
+            background-color: #D8D8D8;
+            overflow: hidden;
+            {% comment %} text-align: left; {% endcomment %}
+        }
+
+        .navbar a {
+            float: right;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 20px 18px;
+            text-decoration: none;
+            display: inline-block; /* Display the links inline */
+        }
+
+        .navbar a:hover {
+            background-color: blue;
+            color: black;
+        }
+      
+    </style>
 </head>
+ 
 <body>
-    <h1>Search Guides by Location</h1>
-    <form method="GET" action="{% url 't_logsign:search_results' %}">
-        <label for="location">Search by Location:</label>
-        <input type="text" name="location" required>
-        <button type="submit">Search</button>
-    </form>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{% url 't_logsign:search_results' %}">Tour Guide</a>
+        <a href="{% url 't_logsign:signup' %}">SignUp</a>
+        <a href="#chat">Chat</a>
+        <a href="#contact">Contact</a>
+        <a href="#pages">Pages</a>
+        <a href="#packages">Packages</a>
+        <a href="#hotels">Hotels</a>
+        <a href="#about">About</a>
+        <a href="/">Home</a>
+    </div>
+
+
+    <div class="sear">
+        <h1 id="h">Search Guides by Location</h1>
+        <form method="GET" action="{% url 't_logsign:search_results' %}">
+            <label for="location" id="lbl">Search by Location:</label><br><br>
+            <input type="text" name="location" required id="tbox"><br><br>
+            <button type="submit" id="btn">Search</button>
+        </form>
+    </div>
+
 </body>
+
 </html>
